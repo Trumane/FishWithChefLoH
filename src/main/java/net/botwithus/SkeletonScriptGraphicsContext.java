@@ -7,6 +7,10 @@ import net.botwithus.rs3.script.ScriptGraphicsContext;
 
 public class SkeletonScriptGraphicsContext extends ScriptGraphicsContext {
 
+    //NPC 320/322 are the Net spots
+    //321 for cages and harpoons
+    //do some code that handles your skilling
+
     private SkeletonScript script;
 
     public SkeletonScriptGraphicsContext(ScriptConsole scriptConsole, SkeletonScript script) {
@@ -21,6 +25,11 @@ public class SkeletonScriptGraphicsContext extends ScriptGraphicsContext {
                 if (ImGui.BeginTabItem("Settings", ImGuiWindowFlag.None.getValue())) {
                     ImGui.Text("Welcome to my script!");
                     ImGui.Text("My scripts state is: " + script.getBotState());
+                    if (ImGui.Button("Start"))
+                    {
+                        //Start button clicked
+                        script.setBotState(SkeletonScript.BotState.SKILLING);
+                    }
                     ImGui.EndTabItem();
                 }
                 if (ImGui.BeginTabItem("Other", ImGuiWindowFlag.None.getValue())) {

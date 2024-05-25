@@ -49,6 +49,8 @@ public class SkeletonScript extends LoopingScript {
                 Execution.delay(random.nextLong(1000,3000));
             }
             case SKILLING -> {
+                //NPC 320/322 are the Net spots
+                //321 for cages and harpoons
                 //do some code that handles your skilling
                 Execution.delay(handleSkilling(player));
             }
